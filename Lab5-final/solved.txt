@@ -1,0 +1,21 @@
+s0 = closure(S'->.S) = S'->.S, S->.Aa, A->.aA, A->.bA, A->.c
+
+s1 = goto(s0, S) = closure(S'->S.) = S'->S.
+s2 = goto(s0, A) = closure(S->A.a) = S->A.a
+s3 = goto(s0, a) = closure(A->a.A) = A->a.A, A->.aA, A->.bA, A->.c
+s4 = goto(s0, b) = closure(A->b.A) = A->b.A, A->.aA, A->.bA, A->.c
+s5 = goto(s0, c) = closure(A->c.) = A->c.
+
+s6 = goto(s2,a) = closure(S->Aa.) = S->Aa.
+
+s7 = goto(s3,A) = closure(A->aA.) = A->aA.
+    goto(s3,a) = closure(A->a.A) = A->a.A, A->.aA, A->.bA, A->.c = s3
+    goto(s3,b) = s4 
+    goto(s3,c) = s5
+
+s8 = goto(s4,A) = closure(A->bA.) = A->bA.
+    goto(s4,a)=s3 
+    goto(s4,b)=s4 
+    goto(s4,c)=s5
+
+C=(s0, s1, s2, s3, s4, s5, s6, s7, s8)

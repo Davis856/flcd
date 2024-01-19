@@ -1,0 +1,25 @@
+<S'> ::= <program>
+
+<program> ::= <stmt>
+
+<stmt> ::= <assignstmt> <ifestmt>
+
+<assignstmt> ::= <IDENTIFIER> "ii" <NUMBER>
+
+<expression> ::= <IDENTIFIER> | <NUMBER>
+
+<iostmt> ::= "zai" <NUMBER>
+
+<ifestmt> ::= <ifstmt> <elsestmt>
+
+<ifstmt> ::= "de" <condition> "atunci" <iostmt>
+
+<elsestmt> ::= "altminteri" <iostmt>
+
+<condition> ::= <expression> <RELATION> <expression>
+
+<RELATION> ::= "sub" | "sub_sau" | "la_fel" | "nu_i" | "peste" | "peste_sau"
+
+<IDENTIFIER> ::= "salut" | "nush1" | "nush2" | "nush3" | "ID"
+
+<NUMBER> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "const" 
