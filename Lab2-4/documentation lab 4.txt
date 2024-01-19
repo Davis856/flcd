@@ -1,0 +1,47 @@
+In this laboratory, I introduced a new class called FiniteAutomaton, designed to perform operations on an automaton loaded from a file. The primary purpose of this class is to facilitate the manipulation of finite automata and their associated functionalities.
+Construction and Initialization:
+
+The constructor of the FiniteAutomaton class reads and parses information from the fa.in file, which includes details such as states, alphabet, transitions, output states, and the initial input state of the automaton. This parsing is done manually using Kotlin's built-in string parsing methods.
+Functionality:
+
+    checkAccepted Method:
+        This method returns true if the provided word is accepted by the automaton.
+        The algorithm checks the automaton's transitions against each letter in the given word, starting from the initial state.
+        If a required transition is not found or the final state is not among the output states, the method returns false. Otherwise, it returns true.
+
+    getNextAccepted Method:
+        This method returns the longest accepted prefix of a given word.
+        Primarily designed to replace regular expressions in the lexical analyzer for matching integer constants and identifiers.
+
+Data Structure:
+
+The finite automaton's information is stored using the following simple data structures:
+
+    States List: Stores the states of the automaton.
+    Alphabet List: Contains the symbols in the alphabet.
+    Output States List: Holds the states designated as output states.
+    Transitions List: Stores transition information between states. Each transition is represented by an instance of a transition class, which encapsulates three variables.
+
+Workflow:
+
+    The checkAccepted method iterates over each letter of a given word, verifying the existence of a transition from the current state with the corresponding letter label.
+    If a required transition is not found or the final state is not among the output states, the word is considered not accepted.
+    Otherwise, the word is accepted.
+
+
+
+fa.in EBNF form
+
+non_zero_digit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+digit = "0" | non_zero_digit;
+number = non_zero_digit { digit };
+letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z";
+character = letter | digit;
+state = character { character };
+transition = "(" state "," state "," character ")";
+states_line = "states" "=" "{" state { "," state } "}";
+in_state_line = state;
+out_states_line = "out_states" "=" "{" state { "," state } "}";
+alphabet_line = "alphabet" "=" "{" character { "," character } "}";
+transitions_line = "transitions" "=" "{" transition { ";" transition } "}";
+inputFile = states_line "\n" in_state_line "\n" out_states_line "\n" alphabet_line "\n" transitions_line;

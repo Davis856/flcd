@@ -1,0 +1,6 @@
+nr factorial(nr var) {
+    nr result = 1.
+    fur nr i=1<=var:
+        result = result times i.
+    give-back result.
+}

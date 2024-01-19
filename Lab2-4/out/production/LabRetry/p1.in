@@ -1,0 +1,9 @@
+binary even_or_odd(nr check) {
+    binary even = cap.
+    when check remainder 2 is 0:
+        even = truth.
+    contrarily:
+        even = cap.
+        123abc
+    give-back even.
+}
