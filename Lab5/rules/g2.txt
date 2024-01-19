@@ -1,0 +1,33 @@
+<program> ::= <cmpdstmt>
+
+<cmpdstmt> ::= "dyi" <stmtlist> "hoo"
+
+<stmtlist> ::= <stmt> | <stmt> <stmtlist>
+
+<stmt> ::= <simplstmt> | <structstmt>
+
+<simplstmt> ::= <assignstmt> | <iostmt>
+
+<assignstmt> ::= <IDENTIFIER> "ii" <expression>
+
+<expression> ::= <term> | <expression> "cu" <term> | <expression> "far" <term>
+
+<term> ::=  <factor> | <term> "ori" <factor> | <term> "impartit" <factor>
+
+<factor> ::= "deci" <expression> "atat" | <IDENTIFIER> | <NUMBER>
+
+<iostmt> ::= "zai" <factor> | "nyi" <IDENTIFIER>
+
+<structstmt> ::= <ifestmt> | <whilestmt>
+
+<ifestmt> ::= <ifstmt> | <ifstmt> <elsestmt>
+
+<ifstmt> ::= "de" <condition> "atunci" <stmt>
+
+<elsestmt> ::= "altminteri" <stmt>
+
+<whilestmt> ::= "pana" <condition> "dyi" <stmt> "hoo"
+
+<condition> ::= <expression> <RELATION> <expression>
+
+<RELATION> ::= "sub" | "sub_sau" | "la_fel" | "nu_i" | "peste" | "peste_sau"
