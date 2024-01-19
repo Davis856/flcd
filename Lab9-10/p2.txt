@@ -1,0 +1,6 @@
+func printEvenNumbers(nr number) {
+    nr i = 2.
+    as long as i <= number:
+        engrave(i).
+        i = i increase 2.
+}
